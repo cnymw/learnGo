@@ -4,6 +4,7 @@ import (
 	"learnGo/src/algorithm/sort/bubble"
 	"learnGo/src/algorithm/sort/insertion"
 	"learnGo/src/algorithm/sort/mergesort"
+	"learnGo/src/algorithm/sort/quicksort"
 	"learnGo/src/algorithm/sort/selectsort"
 	"learnGo/src/algorithm/sort/shell"
 	"learnGo/src/algorithm/sort/tool"
@@ -29,4 +30,8 @@ func main() {
 	merge := new(mergesort.MergeSort)
 	merge.Value, _ = tool.GenerateRandomList()
 	tool.SortTool(merge)
+
+	quicksort := new(quicksort.QuickSort)
+	quicksort.Value, _ = tool.GenerateRandomList()
+	tool.SortTool(quicksort)
 }
