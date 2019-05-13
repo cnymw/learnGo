@@ -1,14 +1,16 @@
 package insertionsort
 
-type InsertionSort [10]int
+type InsertionSort struct {
+	Value []int
+}
 
-func (s *InsertionSort) Sort() ([10]int, error) {
+func (s *InsertionSort) Sort() ([]int, error) {
 	for i := 1; i < 10; i++ {
-		t, j := s[i], i
-		for ; j >= 1 && s[j-1] > t; j-- {
-			s[j] = s[j-1]
+		t, j := s.Value[i], i
+		for ; j >= 1 && s.Value[j-1] > t; j-- {
+			s.Value[j] = s.Value[j-1]
 		}
-		s[j] = t
+		s.Value[j] = t
 	}
-	return *s, nil
+	return s.Value, nil
 }

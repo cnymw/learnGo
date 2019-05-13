@@ -1,14 +1,16 @@
 package bubble
 
-type BubbleSort [10]int
+type BubbleSort struct {
+	Value []int
+}
 
-func (b *BubbleSort) Sort() ([10]int, error) {
-	for i := 0; i < len(*b); i++ {
-		for j := i + 1; j < len(*b); j++ {
-			if b[i] > b[j] {
-				b[i], b[j] = b[j], b[i]
+func (b *BubbleSort) Sort() ([]int, error) {
+	for i := 0; i < len(b.Value); i++ {
+		for j := i + 1; j < len(b.Value); j++ {
+			if b.Value[i] > b.Value[j] {
+				b.Value[i], b.Value[j] = b.Value[j], b.Value[i]
 			}
 		}
 	}
-	return *b, nil
+	return b.Value, nil
 }

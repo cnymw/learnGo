@@ -10,23 +10,23 @@ import (
 )
 
 func main() {
-	var bubble bubble.BubbleSort
-	bubble, _ = tool.GenerateRandomList()
-	tool.SortTool(&bubble)
+	bubble := new(bubble.BubbleSort)
+	bubble.Value, _ = tool.GenerateRandomList()
+	tool.SortTool(bubble)
 
-	var sel selectsort.SelectSort
-	sel, _ = tool.GenerateRandomList()
-	tool.SortTool(&sel)
+	sel := new(selectsort.SelectSort)
+	sel.Value, _ = tool.GenerateRandomList()
+	tool.SortTool(sel)
 
-	var insert insertionsort.InsertionSort
-	insert, _ = tool.GenerateRandomList()
-	tool.SortTool(&insert)
+	insert := new(insertionsort.InsertionSort)
+	insert.Value, _ = tool.GenerateRandomList()
+	tool.SortTool(insert)
 
-	var shell shellsort.ShellSort
-	shell, _ = tool.GenerateRandomList()
-	tool.SortTool(&shell)
+	shell := new(shellsort.ShellSort)
+	shell.Value, _ = tool.GenerateRandomList()
+	tool.SortTool(shell)
 
-	var merge mergesort.MergeSort
-	merge, _ = tool.GenerateRandomList()
-	tool.SortTool(&merge)
+	merge := new(mergesort.MergeSort)
+	merge.Value, _ = tool.GenerateRandomList()
+	tool.SortTool(merge)
 }

@@ -1,17 +1,12 @@
 package mergesort
 
-type MergeSort [10]int
+type MergeSort struct {
+	Value []int
+}
 
-func (m *MergeSort) Sort() ([10]int, error) {
-	s := make([]int, 0)
-	for _, v := range *m {
-		s = append(s, v)
-	}
-	s = mergeSort(s)
-	for i, v := range s {
-		m[i] = v
-	}
-	return *m, nil
+func (m *MergeSort) Sort() ([]int, error) {
+	m.Value = mergeSort(m.Value)
+	return m.Value, nil
 }
 
 func mergeSort(r []int) []int {

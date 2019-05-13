@@ -9,9 +9,9 @@ import (
 )
 
 // 生成大小为10的随机数组
-func GenerateRandomList() ([10]int, error) {
+func GenerateRandomList() ([]int, error) {
 	rand.Seed(time.Now().UnixNano())
-	list := [10]int{}
+	list := make([]int, 10)
 	for i := 0; i < 10; i++ {
 		list[i] = rand.Intn(100)
 	}

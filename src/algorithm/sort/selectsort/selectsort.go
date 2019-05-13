@@ -1,16 +1,18 @@
 package selectsort
 
-type SelectSort [10]int
+type SelectSort struct {
+	Value []int
+}
 
-func (s *SelectSort) Sort() ([10]int, error) {
+func (s *SelectSort) Sort() ([]int, error) {
 	for i := 0; i < 10; i++ {
 		min := i
 		for j := i + 1; j < 10; j++ {
-			if s[j] < s[min] {
+			if s.Value[j] < s.Value[min] {
 				min = j
 			}
 		}
-		s[i], s[min] = s[min], s[i]
+		s.Value[i], s.Value[min] = s.Value[min], s.Value[i]
 	}
-	return *s, nil
+	return s.Value, nil
 }
