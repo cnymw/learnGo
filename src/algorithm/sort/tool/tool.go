@@ -2,7 +2,7 @@ package tool
 
 import (
 	"fmt"
-	"learnGo/src/algorithm/sort/sort_interface"
+	"learnGo/src/algorithm/sort/interface"
 	"math/rand"
 	"reflect"
 	"time"
