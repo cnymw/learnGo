@@ -1,26 +1,46 @@
 package p56
 
-import "math"
+import (
+	"math"
+	"sort"
+)
+
+type Interval struct {
+	Value [][]int
+}
 
 func merge(intervals [][]int) [][]int {
 	if len(intervals) <= 1 {
 		return intervals
 	}
+	interval := new(Interval)
+	interval.Value = intervals
+	sort.Sort(interval)
+
 	result := make([][]int, 0)
-	temp := make([]int, 0)
-	for _, val := range intervals {
-		if len(temp) == 0 {
-			temp = val
+	result = append(result, interval.Value[0])
+	for i := 1; i < len(interval.Value); i++ {
+		if result[end(result)][1] < interval.Value[i][0] {
+			result = append(result, interval.Value[i])
 		} else {
-			if (temp[0] >= val[0] && temp[0] <= val[1]) || (val[0] >= temp[0] && val[0] <= temp[1]) {
-				t := []int{int(math.Min(float64(temp[0]), float64(val[0]))), int(math.Max(float64(temp[1]), float64(val[1])))}
-				result = append(result, t)
-				temp = temp[0:0]
-			} else {
-				result = append(result, temp)
-				result = append(result, val)
-			}
+			result[end(result)][1] = int(math.Max(float64(result[end(result)][1]), float64(interval.Value[i][1])))
 		}
 	}
 	return result
+}
+
+func end(i [][]int) int {
+	return len(i) - 1
+}
+
+func (interval *Interval) Len() int {
+	return len(interval.Value)
+}
+
+func (interval *Interval) Less(i, j int) bool {
+	return interval.Value[i][0] < interval.Value[j][0]
+}
+
+func (interval *Interval) Swap(i, j int) {
+	interval.Value[i], interval.Value[j] = interval.Value[j], interval.Value[i]
 }
