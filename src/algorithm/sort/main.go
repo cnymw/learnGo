@@ -2,6 +2,7 @@ package main
 
 import (
 	"learnGo/src/algorithm/sort/bubble"
+	"learnGo/src/algorithm/sort/heapsort"
 	"learnGo/src/algorithm/sort/insertion"
 	"learnGo/src/algorithm/sort/mergesort"
 	"learnGo/src/algorithm/sort/quicksort"
@@ -34,4 +35,8 @@ func main() {
 	quicksort := new(quicksort.QuickSort)
 	quicksort.Value, _ = tool.GenerateRandomList()
 	tool.SortTool(quicksort)
+
+	heapsort := new(heapsort.HeapSort)
+	heapsort.Value, _ = tool.GenerateRandomList()
+	tool.SortTool(heapsort)
 }
