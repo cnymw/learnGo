@@ -2,6 +2,7 @@ package main
 
 import (
 	"learnGo/src/algorithm/sort/bubble"
+	"learnGo/src/algorithm/sort/countsort"
 	"learnGo/src/algorithm/sort/heapsort"
 	"learnGo/src/algorithm/sort/insertion"
 	"learnGo/src/algorithm/sort/mergesort"
@@ -39,4 +40,9 @@ func main() {
 	heapsort := new(heapsort.HeapSort)
 	heapsort.Value, _ = tool.GenerateRandomList()
 	tool.SortTool(heapsort)
+
+	countsort := new(countsort.CountSort)
+	//countsort.Value,_ = tool.GenerateRandomList()
+	countsort.Value = []int{71, 39, 75, 84, 16, 40, 50, 50, 8, 79}
+	tool.SortTool(countsort)
 }
