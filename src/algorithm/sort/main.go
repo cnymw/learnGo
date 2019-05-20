@@ -7,6 +7,7 @@ import (
 	"learnGo/src/algorithm/sort/insertion"
 	"learnGo/src/algorithm/sort/mergesort"
 	"learnGo/src/algorithm/sort/quicksort"
+	"learnGo/src/algorithm/sort/radixsort"
 	"learnGo/src/algorithm/sort/selectsort"
 	"learnGo/src/algorithm/sort/shell"
 	"learnGo/src/algorithm/sort/tool"
@@ -42,7 +43,11 @@ func main() {
 	tool.SortTool(heapsort)
 
 	countsort := new(countsort.CountSort)
-	//countsort.Value,_ = tool.GenerateRandomList()
-	countsort.Value = []int{71, 39, 75, 84, 16, 40, 50, 50, 8, 79}
+	countsort.Value, _ = tool.GenerateRandomList()
 	tool.SortTool(countsort)
+
+	radixsort := new(radixsort.RadixSort)
+	//radixsort.Value,_ = tool.GenerateRandomList()
+	radixsort.Value = []int{2, 46, 51, 45, 36, 66, 72, 84, 57, 67}
+	tool.SortTool(radixsort)
 }
