@@ -9,7 +9,7 @@ func (s *ShellSort) Sort() ([]int, error) {
 		for j := 0; j < i; j++ {
 
 			// 插入排序
-			for m := j + i; m < 10; m += i {
+			for m := j + i; m < len(s.Value); m += i {
 				t, index := s.Value[m], m
 				for ; index >= i && s.Value[index-i] > t; index -= i {
 					s.Value[index] = s.Value[index-i]

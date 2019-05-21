@@ -2,6 +2,7 @@ package main
 
 import (
 	"learnGo/src/algorithm/sort/bubble"
+	"learnGo/src/algorithm/sort/bucketsort"
 	"learnGo/src/algorithm/sort/countsort"
 	"learnGo/src/algorithm/sort/heapsort"
 	"learnGo/src/algorithm/sort/insertion"
@@ -47,7 +48,10 @@ func main() {
 	tool.SortTool(countsort)
 
 	radixsort := new(radixsort.RadixSort)
-	//radixsort.Value,_ = tool.GenerateRandomList()
-	radixsort.Value = []int{2, 46, 51, 45, 36, 66, 72, 84, 57, 67}
+	radixsort.Value, _ = tool.GenerateRandomList()
 	tool.SortTool(radixsort)
+
+	bucketsort := new(bucketsort.BucketSort)
+	bucketsort.Value, _ = tool.GenerateRandomList()
+	tool.SortTool(bucketsort)
 }
