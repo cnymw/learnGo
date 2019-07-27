@@ -36,3 +36,19 @@ func TestStack_Pop(t *testing.T) {
 	fmt.Println(stack.Pop())
 	fmt.Println(stack.IsEmpty())
 }
+
+func TestStack_Push2(t *testing.T) {
+	var k stack
+	k = k.Push(11)
+	k = k.Push(12)
+
+	for _, v := range k {
+		fmt.Println(v)
+	}
+
+	k, v := k.Pop()
+	fmt.Println(v)
+
+	k, v = k.Pop()
+	fmt.Println(v)
+}
