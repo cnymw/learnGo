@@ -1,4 +1,28 @@
-package godoc
+package p42
+
+import "math"
+
+func trap(height []int) int {
+	s := New()
+	result, current := 0, 0
+
+	for current < len(height) {
+		for !s.Empty() && height[current] > height[s.Peek()] {
+			top := s.Peek()
+			s.Pop()
+			if s.Empty() {
+				break
+			}
+			distance := current - s.Peek() - 1
+			squareHeight := int(math.Min(float64(height[current]), float64(height[s.Peek()]))) - height[top]
+			result = result + distance*squareHeight
+		}
+		s.Push(current)
+		current++
+	}
+
+	return result
+}
 
 type (
 	Stack struct {
@@ -6,7 +30,7 @@ type (
 		length int
 	}
 	node struct {
-		value interface{}
+		value int
 		prev  *node
 	}
 )
@@ -22,17 +46,17 @@ func (this *Stack) Len() int {
 }
 
 // View the top item on the stack
-func (this *Stack) Peek() interface{} {
+func (this *Stack) Peek() int {
 	if this.length == 0 {
-		return nil
+		return 0
 	}
 	return this.top.value
 }
 
 // Pop the top item of the stack and return it
-func (this *Stack) Pop() interface{} {
+func (this *Stack) Pop() int {
 	if this.length == 0 {
-		return nil
+		return 0
 	}
 
 	n := this.top
@@ -42,7 +66,7 @@ func (this *Stack) Pop() interface{} {
 }
 
 // Push a value onto the top of the stack
-func (this *Stack) Push(value interface{}) {
+func (this *Stack) Push(value int) {
 	n := &node{value, this.top}
 	this.top = n
 	this.length++
