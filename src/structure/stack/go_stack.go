@@ -31,5 +31,4 @@ func (stack *Stack) Pop() (int, error) {
 	}
 	stack.Top--
 	return stack.S[stack.Top+1], nil
-
 }
