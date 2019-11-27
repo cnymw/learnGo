@@ -6,7 +6,7 @@ import (
 )
 
 func TestInorderTreeWalk(t *testing.T) {
-	entry := &Entry{}
+	entry := &BinaryTree{}
 	node2 := &Node{Val: 2}
 	node4 := &Node{Val: 4}
 	node3 := &Node{Val: 3, Left: node2, Right: node4}
@@ -20,7 +20,7 @@ func TestInorderTreeWalk(t *testing.T) {
 }
 
 func TestTreeSearch(t *testing.T) {
-	entry := &Entry{}
+	entry := &BinaryTree{}
 	node2 := &Node{Val: 2}
 	node4 := &Node{Val: 4}
 	node3 := &Node{Val: 3, Left: node2, Right: node4}

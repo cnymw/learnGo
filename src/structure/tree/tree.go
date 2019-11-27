@@ -15,9 +15,9 @@ type Tree interface {
 	treeSearch(node *Node, k int) *Node
 }
 
-type Entry struct{}
+type BinaryTree struct{}
 
-func (entry *Entry) inorderTreeWalk(node *Node) {
+func (entry *BinaryTree) inorderTreeWalk(node *Node) {
 	if node != nil {
 		entry.inorderTreeWalk(node.Left)
 		fmt.Println(node.Val)
@@ -25,7 +25,7 @@ func (entry *Entry) inorderTreeWalk(node *Node) {
 	}
 }
 
-func (entry *Entry) treeSearch(node *Node, k int) *Node {
+func (entry *BinaryTree) treeSearch(node *Node, k int) *Node {
 	if node == nil || k == node.Val {
 		return node
 	}

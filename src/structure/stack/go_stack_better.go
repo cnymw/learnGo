@@ -6,7 +6,7 @@ func New() stack {
 	s := make(stack, 0)
 	return s
 }
-func (s stack) Push(v []interface{}) stack {
+func (s stack) Push(v interface{}) stack {
 	return append(s, v)
 }
 
