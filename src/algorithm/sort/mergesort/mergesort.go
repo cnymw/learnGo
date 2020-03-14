@@ -10,13 +10,13 @@ func (m *MergeSort) Sort() ([]int, error) {
 }
 
 func mergeSort(r []int) []int {
-	length := len(r)
-	if length <= 1 {
+	len := len(r)
+	if len <= 1 {
 		return r
 	}
-	num := length / 2
-	left := mergeSort(r[:num])
-	right := mergeSort(r[num:])
+	mid := len / 2
+	left := mergeSort(r[:mid])
+	right := mergeSort(r[mid:])
 	return merge(left, right)
 }
 

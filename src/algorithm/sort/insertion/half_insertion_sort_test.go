@@ -7,6 +7,6 @@ import (
 
 func TestSort(t *testing.T) {
 	s := new(HalfInsertionSort)
-	s.Value, _ = tool.GenerateRandomList()
+	s.Value = tool.GenerateRandomList()
 	tool.SortTool(s)
 }

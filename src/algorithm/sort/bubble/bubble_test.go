@@ -7,6 +7,6 @@ import (
 
 func TestBubble(t *testing.T) {
 	bubble := new(BubbleSort)
-	bubble.Value, _ = tool.GenerateRandomList()
+	bubble.Value = tool.GenerateRandomList()
 	tool.SortTool(bubble)
 }
