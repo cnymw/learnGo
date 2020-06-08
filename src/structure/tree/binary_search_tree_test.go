@@ -5,8 +5,8 @@ import (
 	"testing"
 )
 
-func TestSearchTree_Insert(t *testing.T) {
-	tree := &SearchTree{}
+func TestBinarySearchTree_Insert(t *testing.T) {
+	tree := &BinarySearchTree{}
 	tree.Insert(7)
 	tree.Insert(4)
 	tree.Insert(13)
@@ -17,8 +17,8 @@ func TestSearchTree_Insert(t *testing.T) {
 	tree.PrintTree()
 }
 
-func TestSearchTree_Contains(t *testing.T) {
-	tree := &SearchTree{}
+func TestBinarySearchTree_Contains(t *testing.T) {
+	tree := &BinarySearchTree{}
 	tree.Insert(7)
 	tree.Insert(4)
 	tree.Insert(13)
@@ -30,8 +30,8 @@ func TestSearchTree_Contains(t *testing.T) {
 	fmt.Println(tree.Contains(22))
 }
 
-func TestSearchTree_FindMin(t *testing.T) {
-	tree := &SearchTree{}
+func TestBinarySearchTree_FindMin(t *testing.T) {
+	tree := &BinarySearchTree{}
 	tree.Insert(7)
 	tree.Insert(4)
 	tree.Insert(13)
@@ -39,12 +39,12 @@ func TestSearchTree_FindMin(t *testing.T) {
 	tree.Insert(6)
 	tree.Insert(11)
 	tree.Insert(15)
-	fmt.Println(tree.FindMax().Val)
-	fmt.Println(tree.FindMin().Val)
+	fmt.Println(tree.FindMax().Key)
+	fmt.Println(tree.FindMin().Key)
 }
 
-func TestSearchTree_Remove(t *testing.T) {
-	tree := &SearchTree{}
+func TestBinarySearchTree_Remove(t *testing.T) {
+	tree := &BinarySearchTree{}
 	tree.Insert(6)
 	tree.Insert(2)
 	tree.Insert(7)
@@ -56,4 +56,18 @@ func TestSearchTree_Remove(t *testing.T) {
 	fmt.Println("after remove")
 	tree.Remove(2)
 	tree.PrintTree()
+}
+
+func TestBinarySearchTree_TreeSuccessor(t *testing.T) {
+	tree := &BinarySearchTree{}
+	tree.Insert(6)
+	tree.Insert(2)
+	tree.Insert(7)
+	tree.Insert(1)
+	tree.Insert(5)
+	tree.Insert(3)
+	tree.Insert(4)
+
+	x := tree.TreeSearch(5)
+	fmt.Println(tree.TreeSuccessor(x).Key)
 }
