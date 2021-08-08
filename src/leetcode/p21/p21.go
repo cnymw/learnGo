@@ -1,4 +1,4 @@
-package list
+package p21
 
 type ListNode struct {
 	Val  int
