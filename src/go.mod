@@ -1,6 +1,6 @@
 module learnGo/src
 
-go 1.15
+go 1.16
 
 require (
 	github.com/ivpusic/grpool v1.0.0
