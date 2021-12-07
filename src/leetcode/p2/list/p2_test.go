@@ -1,4 +1,4 @@
-package p2
+package list
 
 import (
 	"fmt"
