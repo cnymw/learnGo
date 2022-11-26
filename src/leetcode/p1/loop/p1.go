@@ -1,7 +1,7 @@
-package p1
+package loop
 
 // 方法1：暴力枚举
-func twoSumByLoop(nums []int, target int) []int {
+func twoSum(nums []int, target int) []int {
 	n := len(nums)
 	for i := 0; i < n; i++ {
 		for j := i + 1; j < n; j++ {
