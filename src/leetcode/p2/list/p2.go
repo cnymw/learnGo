@@ -10,7 +10,7 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 
 	carry := 0
 
-	if l1 != nil || l2 != nil {
+	for l1 != nil || l2 != nil {
 		v1, v2 := 0, 0
 		if l1 != nil {
 			v1 = l1.Val
