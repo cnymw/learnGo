@@ -15,12 +15,12 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	}
 	dummy := &ListNode{Val: 0, Next: head}
 	cur = dummy
-	// 遍历到待 remove 节点的前一个节点
+	// 遍历到待删除节点的前一个节点
 	for i := 1; i < length-n+1; i++ {
 		cur = cur.Next
 	}
-	// 将待 remove 的节点的前一个节点的 Next 指向待 remove 的节点的 Next
-	// 这样就将待 remove 节点给 remove 了
+	// 将待删除的节点的前一个节点的 Next 指向待删除的节点的 Next
+	// 这样就将待删除节点给删除了
 	// 例如 a->b-c 链表，
 	// cur 为 a，
 	// 将 a.Next 指向 c，
