@@ -16,7 +16,7 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	dummy := &ListNode{Val: 0, Next: head}
 	cur = dummy
 	// 遍历到待 remove 节点的前一个节点
-	for i := 0; i < length-n; i++ {
+	for i := 1; i < length-n+1; i++ {
 		cur = cur.Next
 	}
 	// 将待 remove 的节点的前一个节点的 Next 指向待 remove 的节点的 Next
